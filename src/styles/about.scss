@@ -1,0 +1,314 @@
+@use "./partials/all" as *;
+
+.about {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    @include displayGrid(column, 2, 1fr, none, none, 0);
+
+    section {
+        height: 100%;
+        padding: $main-padding;
+    }
+
+    &-content {
+        @include whiteBox;
+        @include displayFlex(column, space-between, none, 0);
+        width: 100%;
+
+        &-title {
+            font-size: $heading-font;
+        }
+
+        .about-me {
+            @include displayFlex(column, center, flex-end, 0);
+
+            & > * {
+                width: 70%;
+            }
+
+            &-content {
+                &-header {
+                    margin-bottom: 1.5rem;
+
+                    &-title {
+                        color: $main-color;
+                        font-size: $title-font;
+                        margin-bottom: .5rem;
+                    }
+
+                    &-description {
+                        font-size: $description-font;
+                    }
+                }
+
+                &-tools {
+                    margin-bottom: 1rem;
+
+                    &-title {
+                        color: $main-color;
+                        font-size: $title-font;
+                        margin-bottom: .5rem;
+                    }
+
+                    .tools {
+                        padding: 0;
+                        margin: 0;
+                        @include displayGrid(column, 3, 1fr, none, none, 1rem);
+
+                        &-tool {
+                            @include displayFlex(row, flex-start, center, .5rem);
+                            padding: .5rem 0;
+                            
+                            & > * {
+                                font-size: $description-font;
+                            }
+                        }
+                    }
+                }
+
+                &-algorithm {
+                    @include displayFlex(row, flex-start, center, .5rem);
+                    text-decoration: none;
+                    color: $main-color;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        &-footer {
+            font-size: $heading-font;
+            color: $main-color;
+        }
+    }
+
+    &-container {
+        @include greenBox;
+        @include displayFlex(column, space-between, flex-end, 0);
+
+        .navigation {
+            width: 100%;
+            
+            &-toggle {
+                display: none;
+            }
+            
+            &-main {
+                @include displayFlex(row, flex-end, center, 0);
+
+                &-link {
+                    margin-right: 1.5rem;
+                    font-size: $nav-font;
+                    font-weight: $bold;
+                    transition: .5s ease-in-out;
+                    
+                    & > * {
+                        text-decoration: none;
+                        color: $tertiary-color;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+
+                .active {
+                    @include activeLink;
+                }
+
+                &-download {
+                    background-color: $main-color;
+                    padding: 0.6rem;
+                    color: $tertiary-color;
+                    font-weight: $bold;
+                    text-decoration: none;
+                    font-size: .8rem;
+                    border-radius: $border-radius;
+                    @include displayFlex(row, center, center, .3rem);
+                }
+            }
+        }
+
+        .avator {
+            width: 90%;
+
+            img {
+                border-radius: 50%;
+                width: 22rem;
+            }
+        }
+
+        &-socials {
+            width: 100%;
+            @include displayFlex(row, flex-end, center, 0);
+
+            .socials {
+                @include displayFlex(row, center, center, 1rem);
+
+                &-link {
+                    color: $main-color;
+                    font-size: $link-font;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        color: $tertiary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .about {
+        position: relative;
+
+        &-background {
+            font-size: $backgroung-letter-font - 10rem;
+        }
+
+        @include displayFlex(row, none, none, none);
+
+        section {
+            padding: 1.8rem;
+        }
+
+        &-content {
+            width: 85%;
+
+            // Content goes here
+            .about-me {
+                & > * {
+                    width: 100%;
+                }
+
+                &-content {
+                    &-header {
+                        margin-bottom: 2rem;
+
+                        &-title {
+                            color: $main-color;
+                            font-size: $title-font - .2rem;
+                            margin-bottom: 1rem;
+                        }
+    
+                        &-description {
+                            font-size: $description-font - .1rem;
+                        }
+                    }
+
+                    &-tools {
+                        margin-bottom: 2rem;
+
+                        &-title {
+                            font-size: $title-font - .2rem;
+                            margin-bottom: 1rem;
+                        }
+                        .tools {
+                            @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                            &-tool {
+                                & > * {
+                                    font-size: $description-font - .1rem;
+                                }
+                            }
+                        }
+                    }
+
+                    &-algorithm {
+                        & > * {
+                            font-size: .8rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-container {
+            .navigation {
+                .desktop {
+                    display: none;
+                }
+
+                &-toggle {
+                    display: flex;
+                    color: $tertiary-color;
+                    font-size: $link-font + .6rem;
+                }
+
+                .mobile-nav-main {
+                    position: absolute;
+                    right: 6rem;
+                    top: 2rem;
+                    @include displayFlex(column, center, center, 1rem);
+                    @include greenBox;
+                    padding: 1rem;
+                    border-radius: $border-radius;
+
+                    &-link {
+                        font-size: $nav-font;
+                        font-weight: $bold;
+                        transition: .5s ease-in-out;
+                        
+                        & > * {
+                            text-decoration: none;
+                            color: $tertiary-color;
+    
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                    }
+    
+                    .active {
+                        @include activeLink;
+                    }
+    
+                    &-download {
+                        background-color: $main-color;
+                        padding: 0.6rem;
+                        color: $tertiary-color;
+                        font-weight: $bold;
+                        text-decoration: none;
+                        font-size: .8rem;
+                        border-radius: $border-radius;
+                        @include displayFlex(row, center, center, .3rem);
+                    }
+                }
+            }
+
+            .avator {
+                display: none;
+            }
+
+            &-socials {
+                .socials {
+                    @include displayFlex(column, center, center, 1rem);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) and (max-height: 670px) {
+    .about {
+        section {
+            padding: 1.5rem;
+        }
+
+        &-content {
+            width: 85%;
+
+            &-info {
+                &-title {
+                    font-size: $main-title-font - .8rem;
+                }
+            }
+        }
+    }
+}

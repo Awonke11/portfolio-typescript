@@ -1,0 +1,41 @@
+@use "./partials/all" as *;
+
+@mixin dimensions($value) {
+    height: $value;
+    width: $value;
+}
+
+.cursor {
+    position: absolute;
+    z-index: 0;
+    top: 5rem;
+    left: 1rem;
+
+    div {
+        @include dimensions(2.5rem);
+        border-radius: 50%;
+        background-color: $main-color;
+    }
+
+    .first {
+        background-color: $secondary-color;
+        @include dimensions(6rem);
+        @include displayFlex(column, center, center, 0);
+        font-size: 2.5rem;
+        color: $tertiary-color;
+    }
+    
+    .second {
+        @include dimensions(5rem);
+        @include displayFlex(column, center, center, 0);
+        font-size: 2rem;
+        color: $tertiary-color;
+    }
+
+    .third {
+        @include dimensions(3rem);
+        @include displayFlex(column, center, center, 0);
+        font-size: 1.5rem;
+        color: $tertiary-color;
+    }
+}

@@ -1,0 +1,36 @@
+@use "./variables" as *;
+
+@mixin displayFlex($direction, $justify, $align, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin displayGrid($type, $number, $frames, $justify, $align, $gap: 0) {
+    display: grid;
+    @if ($type == 'column') {
+        grid-template-columns: repeat($number, $frames)
+    } @else if ($type == 'row') {
+        grid-template-rows: repeat($number, $frames);
+    }
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin whiteBox {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%, rgba(255, 255, 255, 0.2) 100%);
+    backdrop-filter: blur(20px);
+}
+
+@mixin greenBox {
+    background: linear-gradient(180deg, rgba(0, 90, 36, 0.4) 0%, rgba(0, 90, 36, 0.4) 100%);
+    backdrop-filter: blur(20px);
+}
+
+@mixin activeLink {
+    color: $secondary-color;
+    font-weight: $bold;
+}

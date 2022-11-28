@@ -1,0 +1,299 @@
+@use "./partials/all" as *;
+
+.home {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    &-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        @include displayFlex(column, center, center, 0);
+        font-size: $backgroung-letter-font;
+        color: $main-color;
+    }
+
+    @include displayGrid(column, 2, 1fr, none, none, 0);
+
+    section {
+        height: 100%;
+        padding: $main-padding;
+    }
+
+    &-content {
+        @include whiteBox;
+        @include displayFlex(column, space-between, none, 0);
+        width: 100%;
+
+        &-title {
+            font-size: $heading-font;
+        }
+
+        &-info {
+            width: 100%;
+
+            &-title {
+                margin-bottom: 1rem;
+                font-size: $main-title-font;
+                overflow: hidden;
+
+                & > * {
+                    color: $main-color;
+                }
+
+                b {
+                    margin-right: .8rem;
+                    color: $secondary-color;
+                }
+            }
+
+            &-description {
+                max-width: 75%;
+                margin-bottom: 1rem;
+                font-size: $main-description-font;
+            }
+
+            &-button {
+                text-decoration: none;
+                
+                button {
+                    background-color: $main-color;
+                    padding: .6rem;
+                    color: $tertiary-color;
+                    font-weight: $bold;
+                    border-radius: $border-radius;
+                    outline: none;
+                    border: none;
+                    width: 7rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-container {
+        @include greenBox;
+        @include displayFlex(column, space-between, flex-end, 0);
+
+        .navigation {
+            width: 100%;
+            
+            &-toggle {
+                display: none;
+            }
+            
+            &-main {
+                @include displayFlex(row, flex-end, center, 0);
+
+                &-link {
+                    margin-right: 1.5rem;
+                    font-size: $nav-font;
+                    font-weight: $bold;
+                    transition: .5s ease-in-out;
+                    
+                    & > * {
+                        text-decoration: none;
+                        color: $tertiary-color;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+
+                .active {
+                    @include activeLink;
+                }
+
+                &-download {
+                    background-color: $main-color;
+                    padding: 0.6rem;
+                    color: $tertiary-color;
+                    font-weight: $bold;
+                    text-decoration: none;
+                    font-size: .8rem;
+                    border-radius: $border-radius;
+                    @include displayFlex(row, center, center, .3rem);
+                }
+            }
+        }
+
+        &-socials {
+            width: 100%;
+            @include displayFlex(row, flex-end, center, 0);
+
+            .socials {
+                @include displayFlex(column, center, center, 1rem);
+
+                &-link {
+                    color: $main-color;
+                    font-size: $link-font;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        color: $tertiary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .home {
+        position: relative;
+
+        &-background {
+            font-size: $backgroung-letter-font - 10rem;
+        }
+
+        @include displayFlex(row, none, none, none);
+
+        section {
+            padding: 1.8rem;
+        }
+
+        &-content {
+            width: 85%;
+
+            &-info {
+                &-title {
+                    font-size: $main-title-font - .6rem;
+                }
+
+                &-description {
+                    max-width: 100%;
+                    font-size: $main-description-font - .2rem;
+                }
+            }
+        }
+
+        &-container {
+            .navigation {
+                .desktop {
+                    display: none;
+                }
+
+                &-toggle {
+                    display: flex;
+                    color: $tertiary-color;
+                    font-size: $link-font + .6rem;
+                }
+
+                .mobile-nav-main {
+                    position: absolute;
+                    right: 6rem;
+                    top: 2rem;
+                    @include displayFlex(column, center, center, 1rem);
+                    @include greenBox;
+                    padding: 1rem;
+                    border-radius: $border-radius;
+
+                    &-link {
+                        font-size: $nav-font;
+                        font-weight: $bold;
+                        transition: .5s ease-in-out;
+                        
+                        & > * {
+                            text-decoration: none;
+                            color: $tertiary-color;
+    
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                    }
+    
+                    .active {
+                        @include activeLink;
+                    }
+    
+                    &-download {
+                        background-color: $main-color;
+                        padding: 0.6rem;
+                        color: $tertiary-color;
+                        font-weight: $bold;
+                        text-decoration: none;
+                        font-size: .8rem;
+                        border-radius: $border-radius;
+                        @include displayFlex(row, center, center, .3rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) and (max-height: 670px) {
+    .home {
+        section {
+            padding: 1.5rem;
+        }
+
+        &-content {
+            width: 85%;
+
+            &-info {
+                &-title {
+                    font-size: $main-title-font - .8rem;
+                }
+            }
+        }
+
+        &-container {
+            .navigation {
+                .desktop {
+                    display: none;
+                }
+
+                &-toggle {
+                    display: flex;
+                    color: $tertiary-color;
+                    font-size: $link-font + .5rem;
+                }
+
+                .mobile-nav-main {
+                    position: absolute;
+                    right: 6rem;
+                    top: 2rem;
+                    @include displayFlex(column, center, center, 1rem);
+                    @include greenBox;
+                    padding: 1rem;
+                    border-radius: $border-radius;
+
+                    &-link {
+                        font-size: $nav-font;
+                        font-weight: $bold;
+                        transition: .5s ease-in-out;
+                        
+                        & > * {
+                            text-decoration: none;
+                            color: $tertiary-color;
+    
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                    }
+    
+                    .active {
+                        @include activeLink;
+                    }
+    
+                    &-download {
+                        background-color: $main-color;
+                        padding: 0.6rem;
+                        color: $tertiary-color;
+                        font-weight: $bold;
+                        text-decoration: none;
+                        font-size: .8rem;
+                        border-radius: $border-radius;
+                        @include displayFlex(row, center, center, .3rem);
+                    }
+                }
+            }
+        }
+    }
+}
