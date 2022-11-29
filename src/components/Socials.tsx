@@ -11,8 +11,7 @@ const Socials = ({visible} : {visible: boolean}) => {
                 transition={{duration: .5, delay: delayTime - .9}}
                 href="https://github.com/Awonke11" 
                 className="socials-link" 
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
             >
                 <FaGithub className="socials-link-icon" />
             </motion.a>
@@ -22,8 +21,7 @@ const Socials = ({visible} : {visible: boolean}) => {
                 transition={{duration: .5, delay: delayTime - .7}}
                 href="https://www.instagram.com/aj_mnotoza/" 
                 className="socials-link" 
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
             >
                 <FaInstagram className="socials-link-icon" />
             </motion.a>
@@ -33,8 +31,7 @@ const Socials = ({visible} : {visible: boolean}) => {
                 transition={{duration: .5, delay: delayTime - .5}}
                 href="https://www.linkedin.com/in/awonke-mnotoza-41a836221/" 
                 className="socials-link" 
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
             >
                 <FaLinkedin className="socials-link-icon" />
             </motion.a>
