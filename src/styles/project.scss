@@ -21,13 +21,47 @@
             font-size: $heading-font;
         }
 
+        &-info {
+            @include displayFlex(column, center, flex-end, 0);
+
+            .project-view {
+                &-content {
+                    &-image {
+                        width: 450px;
+                        height: 250px;
+                        border-radius: $border-radius;
+                        margin-bottom: .5rem;
+                    }
+
+                    &-links {
+                        @include displayFlex(row, flex-start, center, 1.5rem);
+
+                        &-link {
+                            @include displayFlex(row, flex-start, center, .3rem);
+                            text-decoration: none;
+                            color: $secondary-color;
+                            transition: .5s ease-in-out;
+
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                    }
+                }
+
+                .project-main-view-main {
+                    display: none;
+                }
+            }
+        }
+
         .project-nav {
             @include displayFlex(row, flex-start, center, .8rem);
 
             &-link {
                 &-image {
                     border-radius: $border-radius - 5px;
-                    width: 55px;
+                    width: 45px;
                 }
             }
 
@@ -84,6 +118,68 @@
             }
         }
 
+        .project-main-view-main {
+            width: 100%;
+
+            &-info {
+                width: 80%;
+                margin-bottom: 1.8rem;
+
+                &-title {
+                    font-size: $title-font;
+                    color: $main-color;
+                    margin-bottom: .5rem;
+                }
+
+                &-description {
+                    font-size: $description-font;
+                }
+            }
+
+            &-features {
+                width: 80%;
+                margin-bottom: 1.8rem;
+
+                &-title {
+                    font-size: $title-font;
+                    color: $main-color;
+                    margin-bottom: .5rem;
+                }
+
+                &-items {
+                    @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                    &-item {
+                        font-size: $description-font;
+                        color: $tertiary-color;
+                    }
+                }
+            }
+
+            &-tools {
+                width: 80%;
+
+                &-title {
+                    font-size: $title-font;
+                    color: $main-color;
+                    margin-bottom: .5rem;
+                }
+
+                &-items {
+                    @include displayGrid(column, 3, 1fr, none, none, 1rem);
+
+                    &-item {
+                        @include displayFlex(row, flex-start, center, .5rem);
+                        padding: .5rem 0;
+                        
+                        & > * {
+                            font-size: $description-font;
+                        }
+                    }
+                }
+            }
+        }
+
         &-socials {
             width: 100%;
             @include displayFlex(row, flex-end, center, 0);
@@ -121,6 +217,93 @@
 
         &-content {
             width: 85%;
+
+            &-info {
+                .project-view {
+                    &-content {
+                        margin-bottom: 2rem;
+                        &-image {
+                            width: 250px;
+                            height: 150px;
+                            border-radius: $border-radius;
+                            margin-bottom: .5rem;
+                        }
+    
+                        &-links {
+                            @include displayFlex(row, flex-start, center, 1rem);
+    
+                            &-link {
+                                @include displayFlex(row, flex-start, center, .3rem);
+                                text-decoration: none;
+                                color: $secondary-color;
+                                transition: .5s ease-in-out;
+    
+                                &:hover {
+                                    color: $main-color;
+                                }
+                            }
+                        }
+                    }
+                    .project-main-view-main {
+                        display: initial;
+
+                        &-info {
+                            margin-bottom: 1.5rem;
+
+                            &-title {
+                                font-size: $title-font - .2rem;
+                                color: $main-color;
+                                margin-bottom: .5rem;
+                            }
+
+                            &-description {
+                                font-size: $description-font - .1rem;
+                            }
+                        }
+
+                        &-features {
+                            margin-bottom: 1.5rem;
+
+                            &-title {
+                                font-size: $title-font - .2rem;
+                                color: $main-color;
+                                margin-bottom: .5rem;
+                            }
+
+                            &-items {
+                                @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                                &-item {
+                                    font-size: $description-font;
+                                    color: $secondary-color;
+                                }
+                            }
+                        }
+
+                        &-tools {
+
+                            &-title {
+                                font-size: $title-font - .2rem;
+                                color: $main-color;
+                                margin-bottom: .5rem;
+                            }
+
+                            &-items {
+                                @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                                &-item {
+                                    @include displayFlex(row, flex-start, center, .5rem);
+                                    padding: .5rem 0;
+                                    
+                                    & > * {
+                                        font-size: $description-font;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
             .project-nav {
                 @include displayFlex(row, flex-start, center, .8rem);
@@ -188,7 +371,7 @@
                 }
             }
 
-            .avator {
+            .project-main-view-main {
                 display: none;
             }
 

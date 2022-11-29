@@ -4,8 +4,10 @@ import Socials from "../components/Socials";
 import "../styles/project.scss";
 import {motion} from "framer-motion"
 import Cursor from "../components/Cursor";
-import me from "../asserts/AvatarMaker.png"
+import demo from "../asserts/demo.jpg";
 import ProjectsNav from "../components/ProjectsNav";
+import ProjectMainView from "../components/ProjectMainView";
+import ProjectView from "../components/ProjectView";
 
 const Project = () => {
     return (
@@ -24,7 +26,16 @@ const Project = () => {
                     animate={{opacity: 1}}
                     transition={{delay: 1, duration: 0.5}}
                 >
-                    
+                    <ProjectView 
+                        projectImage={demo}
+                        figmaLink="https://google.com/"
+                        liveLink="https://google.com/"
+                        githubLink="https://google.com/"
+                        title="Project Title" 
+                        description="This will be the project description that will detail what the project is about." 
+                        features={["Responsive", "Authentication", "Google Database"]}
+                        tools={["React TS", "SASS"]}
+                    />
                 </motion.div>
                 <ProjectsNav />
             </motion.section>
@@ -36,6 +47,12 @@ const Project = () => {
                 transition={{duration: 1, ease: "easeOut"}}
             >
                 <Navigation />
+                <ProjectMainView 
+                    title="Project Title" 
+                    description="This will be the project description that will detail what the project is about." 
+                    features={["Responsive", "Authentication", "Google Database"]}
+                    tools={["React TS", "SASS"]}
+                />
                 <div className="project-container-socials">
                     <Socials visible={true} />
                 </div>
