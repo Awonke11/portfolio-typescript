@@ -394,8 +394,101 @@
             width: 85%;
 
             &-info {
-                &-title {
-                    font-size: $main-title-font - .8rem;
+                .project-view {
+                    &-content {
+                        margin-bottom: 2rem;
+                        &-image {
+                            width: 250px;
+                            height: 150px;
+                            border-radius: $border-radius;
+                            margin-bottom: .5rem;
+                        }
+    
+                        &-links {
+                            @include displayFlex(row, flex-start, center, 1rem);
+    
+                            &-link {
+                                @include displayFlex(row, flex-start, center, .3rem);
+                                text-decoration: none;
+                                color: $secondary-color;
+                                transition: .5s ease-in-out;
+                                font-size: $description-font - .3rem;
+    
+                                &:hover {
+                                    color: $main-color;
+                                }
+                            }
+                        }
+                    }
+                    .project-main-view-main {
+                        display: initial;
+
+                        &-info {
+                            margin-bottom: 1rem;
+
+                            &-title {
+                                font-size: $title-font - .4rem;
+                                color: $main-color;
+                                margin-bottom: .2rem;
+                            }
+
+                            &-description {
+                                font-size: $description-font - .3rem;
+                            }
+                        }
+
+                        &-features {
+                            margin-bottom: 1rem;
+
+                            &-title {
+                                font-size: $title-font - .4rem;
+                                color: $main-color;
+                                margin-bottom: .2rem;
+                            }
+
+                            &-items {
+                                @include displayGrid(column, 2, 1fr, none, none, .5rem);
+
+                                &-item {
+                                    font-size: $description-font - .3rem;
+                                    color: $secondary-color;
+                                }
+                            }
+                        }
+
+                        &-tools {
+
+                            &-title {
+                                font-size: $title-font - .4rem;
+                                color: $main-color;
+                                margin-bottom: .2rem;
+                            }
+
+                            &-items {
+                                @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                                &-item {
+                                    @include displayFlex(row, flex-start, center, .5rem);
+                                    padding: .5rem 0;
+                                    
+                                    & > * {
+                                        font-size: $description-font - .3rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .project-nav {
+                @include displayFlex(row, flex-start, center, .8rem);
+    
+                &-link {
+                    &-image {
+                        border-radius: $border-radius - 5px;
+                        width: 30px;
+                    }
                 }
             }
         }
