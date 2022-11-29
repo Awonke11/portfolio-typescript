@@ -18,7 +18,7 @@ const MobileNavigation = ({show} : {show: boolean}) => {
                     <NavLink to="/about">About</NavLink>
                 </motion.div>
                 <motion.div variants={child}  className="mobile-nav-main-link">
-                    <NavLink to="/project">Projects</NavLink>
+                    <NavLink to="/projects/milton">Projects</NavLink>
                 </motion.div>
                 <motion.a variants={child} href="http://" download className="mobile-nav-main-download">
                     <FiDownload className="mobile-nav-main-download-icon" />
