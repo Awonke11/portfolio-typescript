@@ -23,7 +23,7 @@ const Navigation : React.FC = () : JSX.Element => {
                     <NavLink to="/about">About</NavLink>
                 </motion.div>
                 <motion.div variants={child}  className="navigation-main-link">
-                    <NavLink to="/project">Projects</NavLink>
+                    <NavLink to="/projects/milton">Projects</NavLink>
                 </motion.div>
                 <motion.a variants={child} href="http://" download className="navigation-main-download">
                     <FiDownload className="navigation-main-download-icon" />

@@ -14,7 +14,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/project" element={<Project />} />
+            <Route path="/projects/:id" element={<Project />} />
           </Routes>
         </AnimatePresence>
       </Router>

@@ -9,9 +9,10 @@ const Socials = ({visible} : {visible: boolean}) => {
                 initial={{scale: 2, opacity: 0}}
                 animate={{scale: 1, opacity: 1}}
                 transition={{duration: .5, delay: delayTime - .9}}
-                href="http://" 
+                href="https://github.com/Awonke11" 
                 className="socials-link" 
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 <FaGithub className="socials-link-icon" />
             </motion.a>
@@ -19,9 +20,10 @@ const Socials = ({visible} : {visible: boolean}) => {
                 initial={{scale: 2, opacity: 0}}
                 animate={{scale: 1, opacity: 1}}
                 transition={{duration: .5, delay: delayTime - .7}}
-                href="http://" 
+                href="https://www.instagram.com/aj_mnotoza/" 
                 className="socials-link" 
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 <FaInstagram className="socials-link-icon" />
             </motion.a>
@@ -29,9 +31,10 @@ const Socials = ({visible} : {visible: boolean}) => {
                 initial={{scale: 2, opacity: 0}}
                 animate={{scale: 1, opacity: 1}}
                 transition={{duration: .5, delay: delayTime - .5}}
-                href="http://" 
+                href="https://www.linkedin.com/in/awonke-mnotoza-41a836221/" 
                 className="socials-link" 
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 <FaLinkedin className="socials-link-icon" />
             </motion.a>
