@@ -24,7 +24,7 @@ const SecondSteps = () => {
           <span className='second-steps-component-number'>4</span>
           <div className='second-steps-component-content'>
               <h4 className='second-steps-component-content-title'>Testing</h4>
-              <p className='second-steps-component-content-description'>Test the website with users that are exactly the target market of the client. Observe their interactions and if any bugs they encounter I fix them.</p>
+              <p className='second-steps-component-content-description'>Test the website with users that are exactly the target market of the client. Observe their interactions with the website through recording and if any problems they encounter I fix them. Then publish the webiste upon the client's request.</p>
           </div>
         </motion.div>
       </div>

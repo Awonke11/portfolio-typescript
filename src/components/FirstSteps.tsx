@@ -12,7 +12,7 @@ const FirstSteps = () => {
         <div className='first-steps-component-number'>1</div>
         <div className='first-steps-component-content'>
             <h4 className='first-steps-component-content-title'>Consultation</h4>
-            <p className='first-steps-component-content-description'>First consult with the client to understand the product I am going to build. Takes notes of the plan and help them take communicate about their idea</p>
+            <p className='first-steps-component-content-description'>First consult with the client to understand the product I am going to build. Takes notes of the idea and help them take communicate better about their idea, so that I can get more information.</p>
         </div>
       </motion.div>
       <motion.div 
@@ -24,7 +24,7 @@ const FirstSteps = () => {
         <span className='first-steps-component-number'>2</span>
         <div className='first-steps-component-content'>
             <h4 className='first-steps-component-content-title'>Design</h4>
-            <p className='first-steps-component-content-description'>Based on understanding what the client wants, I create the design of the product (website). While designing I keep in touch with the client to ensure that I am moving in the right direction with design.</p>
+            <p className='first-steps-component-content-description'>Based on understanding what the client wants, I create the design of the product (website). While designing I keep in touch with the client to ensure that I am moving in the right direction with designing.</p>
         </div>
       </motion.div>
     </div>
