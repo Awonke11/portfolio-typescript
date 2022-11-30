@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import {AnimatePresence} from "framer-motion"
 import About from './pages/About';
 import Project from './pages/Project';
+import Algorithm from './pages/Algorithm';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects/:id" element={<Project />} />
+            <Route path="/algorithm" element={<Algorithm />} />
           </Routes>
         </AnimatePresence>
       </Router>

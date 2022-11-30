@@ -6,6 +6,7 @@ import {motion} from "framer-motion";
 import { useState } from "react";
 import MobileNavigation from "./MobileNavigation";
 import { AiFillCloseSquare } from "react-icons/ai";
+import resume from "../asserts/awonke_resume.pdf"
 
 const Navigation : React.FC = () : JSX.Element => {
     const [displayMobileNav, setDisplayMobileNav] = useState<boolean>(false)
@@ -25,7 +26,7 @@ const Navigation : React.FC = () : JSX.Element => {
                 <motion.div variants={child}  className="navigation-main-link">
                     <NavLink to="/projects/milton">Projects</NavLink>
                 </motion.div>
-                <motion.a variants={child} href="http://" download className="navigation-main-download">
+                <motion.a variants={child} href={resume} download className="navigation-main-download">
                     <FiDownload className="navigation-main-download-icon" />
                     <span className="navigation-main-download-text">Resume</span>
                 </motion.a>

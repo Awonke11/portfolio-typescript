@@ -14,7 +14,7 @@ const AboutMeContent = () : JSX.Element => {
                     <h2 className="about-me-content-tools-title">Programming Tools</h2>
                     <ProgrammingTools list={["React JS", "Typescript", "Javascript", "Python", "Java", "SASS", "Firebase"]} />
                 </div>
-                <Link to="/about" className="about-me-content-algorithm">
+                <Link to="/algorithm" className="about-me-content-algorithm">
                     <span>My Algorithm for creating a website</span>
                     <AiOutlineArrowRight />
                 </Link>

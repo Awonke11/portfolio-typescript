@@ -1,0 +1,455 @@
+@use "./partials/all" as *;
+
+.algorithm {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    @include displayGrid(column, 2, 1fr, none, none, 0);
+
+    section {
+        height: 100%;
+        padding: $main-padding;
+    }
+
+    &-content {
+        @include whiteBox;
+        @include displayFlex(column, space-between, none, 0);
+        width: 100%;
+
+        &-title {
+            font-size: $heading-font;
+        }
+
+        &-info {
+            @include displayFlex(column, center, flex-end, 0);
+            
+            .first-steps {
+                width: 60%;
+                &-component {
+                    @include displayFlex(row, flex-start, flex-start, 0);
+                    margin-bottom: 1rem;
+
+                    &-number {
+                        margin-right: 1rem;
+                        background-color: $main-color;
+                        padding: 1rem;
+                        border-radius: 50%;
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        @include displayFlex(column, center, center, 0);
+                        font-weight: $bold;
+                        color: $tertiary-color;
+                    }
+
+                    &-content {
+                        &-title {
+                            margin-bottom: .5rem;
+                        }
+                    }
+                }
+            }
+
+            .second-steps {
+                display: none;
+            }
+        }
+
+        &-footer {
+            font-size: $heading-font;
+            color: $main-color;
+        }
+    }
+
+    &-container {
+        @include greenBox;
+        @include displayFlex(column, space-between, flex-end, 0);
+
+        .navigation {
+            width: 100%;
+            
+            &-toggle {
+                display: none;
+            }
+            
+            &-main {
+                @include displayFlex(row, flex-end, center, 0);
+
+                &-link {
+                    margin-right: 1.5rem;
+                    font-size: $nav-font;
+                    font-weight: $bold;
+                    transition: .5s ease-in-out;
+                    
+                    & > * {
+                        text-decoration: none;
+                        color: $tertiary-color;
+
+                        &:hover {
+                            color: $main-color;
+                        }
+                    }
+                }
+
+                .active {
+                    @include activeLink;
+                }
+
+                &-download {
+                    background-color: $main-color;
+                    padding: 0.6rem;
+                    color: $tertiary-color;
+                    font-weight: $bold;
+                    text-decoration: none;
+                    font-size: .8rem;
+                    border-radius: $border-radius;
+                    @include displayFlex(row, center, center, .3rem);
+                }
+            }
+        }
+
+        .second-steps {
+            &-component {
+            @include displayFlex(row, flex-start, flex-start, 0);
+            margin-bottom: 1rem;
+            width: 60%;
+
+                &-number {
+                    margin-right: 1rem;
+                    background-color: $main-color;
+                    padding: 1rem;
+                    border-radius: 50%;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    @include displayFlex(column, center, center, 0);
+                    font-weight: $bold;
+                    color: $tertiary-color;
+                }
+
+                &-content {
+                    &-title {
+                        margin-bottom: .5rem;
+                    }
+                }
+            }
+        }
+
+        .algorithm-main-view-main {
+            width: 100%;
+
+            &-info {
+                width: 80%;
+                margin-bottom: 1.8rem;
+
+                &-title {
+                    font-size: $title-font;
+                    color: $main-color;
+                    margin-bottom: .5rem;
+                }
+
+                &-description {
+                    font-size: $description-font;
+                }
+            }
+
+            &-features {
+                width: 80%;
+                margin-bottom: 1.8rem;
+
+                &-title {
+                    font-size: $title-font;
+                    color: $main-color;
+                    margin-bottom: .5rem;
+                }
+
+                &-items {
+                    @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                    &-item {
+                        font-size: $description-font;
+                        color: $tertiary-color;
+                    }
+                }
+            }
+
+            &-tools {
+                width: 80%;
+
+                &-title {
+                    font-size: $title-font;
+                    color: $main-color;
+                    margin-bottom: .5rem;
+                }
+
+                &-items {
+                    @include displayGrid(column, 3, 1fr, none, none, 1rem);
+
+                    &-item {
+                        @include displayFlex(row, flex-start, center, .5rem);
+                        padding: .5rem 0;
+                        
+                        & > * {
+                            font-size: $description-font;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-socials {
+            width: 100%;
+            @include displayFlex(row, flex-end, center, 0);
+
+            .socials {
+                @include displayFlex(row, center, center, 1rem);
+
+                &-link {
+                    color: $main-color;
+                    font-size: $link-font;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        color: $tertiary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .algorithm {
+        position: relative;
+
+        &-background {
+            font-size: $backgroung-letter-font - 10rem;
+        }
+
+        @include displayFlex(row, none, none, none);
+
+        section {
+            padding: 1.8rem;
+        }
+
+        &-content {
+            width: 85%;
+
+            &-info {
+                .first-steps {
+                    width: 100%;
+                    &-component {
+                        &-content {
+                            &-description {
+                                font-size: $description-font - .15rem;
+                            }
+                        }
+                    }
+                }
+                .second-steps {
+                    display: initial;
+                    &-component {
+                    @include displayFlex(row, flex-start, flex-start, 0);
+                    margin-bottom: 1rem;
+                    width: 100%;
+        
+                        &-number {
+                            margin-right: 1rem;
+                            background-color: $main-color;
+                            padding: 1rem;
+                            border-radius: 50%;
+                            width: 2.5rem;
+                            height: 2.5rem;
+                            @include displayFlex(column, center, center, 0);
+                            font-weight: $bold;
+                            color: $tertiary-color;
+                        }
+        
+                        &-content {
+                            &-title {
+                                margin-bottom: .5rem;
+                            }
+                            &-description {
+                                font-size: $description-font - .15rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-container {
+            .navigation {
+                .desktop {
+                    display: none;
+                }
+
+                &-toggle {
+                    display: flex;
+                    color: $tertiary-color;
+                    font-size: $link-font + .6rem;
+                }
+
+                .mobile-nav-main {
+                    position: absolute;
+                    right: 6rem;
+                    top: 2rem;
+                    @include displayFlex(column, center, center, 1rem);
+                    @include greenBox;
+                    padding: 1rem;
+                    border-radius: $border-radius;
+
+                    &-link {
+                        font-size: $nav-font;
+                        font-weight: $bold;
+                        transition: .5s ease-in-out;
+                        
+                        & > * {
+                            text-decoration: none;
+                            color: $tertiary-color;
+    
+                            &:hover {
+                                color: $main-color;
+                            }
+                        }
+                    }
+    
+                    .active {
+                        @include activeLink;
+                    }
+    
+                    &-download {
+                        background-color: $main-color;
+                        padding: 0.6rem;
+                        color: $tertiary-color;
+                        font-weight: $bold;
+                        text-decoration: none;
+                        font-size: .8rem;
+                        border-radius: $border-radius;
+                        @include displayFlex(row, center, center, .3rem);
+                    }
+                }
+            }
+
+            .second-steps {
+                display: none;
+            }
+
+            &-socials {
+                .socials {
+                    @include displayFlex(column, center, center, 1rem);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) and (max-height: 670px) {
+    .algorithm {
+        section {
+            padding: 1.5rem;
+        }
+
+        &-content {
+            width: 85%;
+
+            &-info {
+                .algorithm-view {
+                    &-content {
+                        margin-bottom: 2rem;
+                        &-image {
+                            width: 250px;
+                            height: 150px;
+                            border-radius: $border-radius;
+                            margin-bottom: .5rem;
+                        }
+    
+                        &-links {
+                            @include displayFlex(row, flex-start, center, 1rem);
+    
+                            &-link {
+                                @include displayFlex(row, flex-start, center, .3rem);
+                                text-decoration: none;
+                                color: $secondary-color;
+                                transition: .5s ease-in-out;
+                                font-size: $description-font - .3rem;
+    
+                                &:hover {
+                                    color: $main-color;
+                                }
+                            }
+                        }
+                    }
+                    .algorithm-main-view-main {
+                        display: initial;
+
+                        &-info {
+                            margin-bottom: 1rem;
+
+                            &-title {
+                                font-size: $title-font - .4rem;
+                                color: $main-color;
+                                margin-bottom: .2rem;
+                            }
+
+                            &-description {
+                                font-size: $description-font - .3rem;
+                            }
+                        }
+
+                        &-features {
+                            margin-bottom: 1rem;
+
+                            &-title {
+                                font-size: $title-font - .4rem;
+                                color: $main-color;
+                                margin-bottom: .2rem;
+                            }
+
+                            &-items {
+                                @include displayGrid(column, 2, 1fr, none, none, .5rem);
+
+                                &-item {
+                                    font-size: $description-font - .3rem;
+                                    color: $secondary-color;
+                                }
+                            }
+                        }
+
+                        &-tools {
+
+                            &-title {
+                                font-size: $title-font - .4rem;
+                                color: $main-color;
+                                margin-bottom: .2rem;
+                            }
+
+                            &-items {
+                                @include displayGrid(column, 2, 1fr, none, none, 1rem);
+
+                                &-item {
+                                    @include displayFlex(row, flex-start, center, .5rem);
+                                    padding: .5rem 0;
+                                    
+                                    & > * {
+                                        font-size: $description-font - .3rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .algorithm-nav {
+                @include displayFlex(row, flex-start, center, .8rem);
+    
+                &-link {
+                    &-image {
+                        border-radius: $border-radius - 5px;
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

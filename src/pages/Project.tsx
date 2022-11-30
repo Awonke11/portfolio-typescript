@@ -8,24 +8,6 @@ import ProjectMainView from "../components/ProjectMainView";
 import ProjectView from "../components/ProjectView";
 import {useParams} from "react-router-dom"
 import { useFilter } from "../hooks/FilterData";
-import {db} from "../firebase/firebase";
-import {useState, useEffect} from "react";
-import {collection, getDocs} from "firebase/firestore";
-import demo from "../asserts/demo.jpg";
-import personal from "../asserts/personal.png";
-import salesmall from "../asserts/salesmall.png";
-import milton from "../asserts/milton.png";
-
-interface Data {
-    title: string,
-    description: string,
-    figmaLink: string,
-    liveLink: string,
-    githubLink: string,
-    features: string[],
-    tools: string[],
-    img: string
-}
 
 const Project = () => {
     const {id} = useParams()
